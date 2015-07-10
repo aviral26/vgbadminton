@@ -1,0 +1,5 @@
+<% provide(:title, 'Contact') %>
+<h1>Contact</h1>
+<p>
+  Contact me at aviral2605@gmail.com ; +91 7838873288
+</p>
