@@ -25,9 +25,13 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      #@user.send_activation_email
+      #flash[:info] = "Please check your email to activate your account."
+      #redirect_to root_url
+      @user.activate
+      log_in @user
+      flash[:success] = "Account activated! (Email verification is temporarily disabled due to pecuniary difficulties.)"
+      redirect_to @user
     else
       render '/user/new'
     end
