@@ -29,6 +29,9 @@ class User < ActiveRecord::Base
     self.activated
   end
 
+  def toggle_admin
+    self.toggle(:admin)
+
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
