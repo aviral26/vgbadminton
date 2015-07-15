@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def toggle_admin
-    self.toggle(:admin)
+    self.admin = true
 
   def remember
     self.remember_token = User.new_token
