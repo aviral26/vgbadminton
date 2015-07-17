@@ -6,9 +6,9 @@ module UserHelper
     #gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
     #gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     if user.picture?
-    	image_tag(user.picture.url, size: "50", alt: "Missing image", class: "gravatar")
+    	image_tag(user.picture.url, size: "#{size}", alt: "Missing image", class: "gravatar")
     else
-    	image_tag "baddy.png", alt: "Missing image", size: "50"
+    	image_tag "baddy.png", alt: "Missing image", size: "#{size}"
     end
   end
 end
