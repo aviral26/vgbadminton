@@ -1,0 +1,43 @@
+<div>
+    <aside>
+        <h1 class = "bg-primary">31st July - 2nd August</h1> 
+   	    <h1 class = "bg-secondary">Sweat it out to be the winner!</h1>
+
+        <p align = "center">
+            <span><%= link_to "Tournament-Rules", '#' %></span>
+            <span><%= link_to "Teams", '#' %></span>
+            <span><%= link_to "Scores", '#' %></span>
+        </p>
+        <h2> </h2>
+        <aside class="col-md-4">
+            <%= form_for(@image, html: {multipart: true}) do |f| %>
+                <%= render 'shared/error_messages', object: f.object %>
+                <h3>Upload a picture here!</h3>
+                <%= f.label :name %>
+                <%= f.text_field :name, placeholder: "Give it a caption.." %>
+                <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+                <%= f.hidden_field :timestamps, :value => DateTime.now %> 
+                <%= f.hidden_field :user_id, :value => current_user.id %>
+                <%= f.submit "Post picture!" %>
+            <% end %>
+        </aside>
+    </aside>    
+</div>
+<div class = "col-md-8">
+  <% if @images && @images.any?%>
+    
+    <% for image in @images %>
+        <h2>"<%=image.name%>"</h2>
+        <h2>Posted <%= time_ago_in_words(image.timestamps) if image.timestamps%> ago by <%= User.find(image.user_id).name %></h2>
+        <center><%=image_tag(image.picture.url)%></center>
+        <h4> </h4>
+        <!--<tr>
+            <td><h2><%=image.name%> </h2></td>
+            <td align = "center"><%=image_tag(image.picture.url)%></td>
+        </tr>-->
+    <% end %>
+    <%= will_paginate @images %>
+  <% end %>
+</div>
+
+  

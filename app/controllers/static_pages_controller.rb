@@ -6,6 +6,11 @@ class StaticPagesController < ApplicationController
   	end
   end
 
+  def tournament
+    @image = Image.new
+    @images = Image.paginate(page: params[:page])
+  end
+
   def help
   end
 

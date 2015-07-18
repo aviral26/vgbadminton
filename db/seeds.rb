@@ -38,3 +38,11 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+50.times do |n|
+  image = "baddy.png"
+  user_id = 1
+  name = "#{n}"
+  timestamp = DateTime.now
+  Image.new(:name => name, :picture => image, :user_id => user_id, :timestamps => timestamp)
+end

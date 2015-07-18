@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717062920) do
+ActiveRecord::Schema.define(version: 20150718105055) do
+
+  create_table "images", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "picture"
+    t.datetime "timestamps"
+    t.integer  "user_id"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"

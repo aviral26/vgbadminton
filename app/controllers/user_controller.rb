@@ -32,7 +32,7 @@ class UserController < ApplicationController
       #redirect_to root_url
       @user.activate
       log_in @user
-      flash[:success] = "Account activated! (Email verification is temporarily disabled due to pecuniary difficulties.)"
+      flash[:success] = "Account activated! (Email verification is temporarily disabled due to pecuniary limitations)"
       redirect_to @user
     else
       render '/user/new'
