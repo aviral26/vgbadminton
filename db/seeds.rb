@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
 User.create!(name:  "Aviral Takkar",
              email: "aviral@gmail.com",
              password:              "scooby",
@@ -12,7 +14,7 @@ User.create!(name:  "Aviral Takkar",
              admin: true, 
              activated: true,
              activated_at: Time.zone.now)
-
+=begin
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
@@ -46,3 +48,4 @@ followers.each { |follower| follower.follow(user) }
   timestamp = DateTime.now
   Image.new(:name => name, :picture => image, :user_id => user_id, :timestamps => timestamp)
 end
+=end
