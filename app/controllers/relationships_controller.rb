@@ -17,7 +17,7 @@ class RelationshipsController < ApplicationController
     current_user.unfollow(@user)
     flash.now[:success] = "You have un-followed #{@user.name}!"
     respond_to do |format|
-      format.html { redirect_to @user }
+      format.html { render 'user/index' }
       format.js
     end
     #redirect_to user
