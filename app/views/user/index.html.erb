@@ -15,6 +15,10 @@
                 <div><%= hidden_field_tag :followed_id, user.id %></div>
                 <p style='float:left'><%= f.submit "Follow" %></p>
               <% end %>
+            <%else%>
+                <%unless current_user?(user)%>
+                  <p style='float:left'>You follow <%=user.name%>.</p>     
+                <%end%>
             <%end%>
           </div>
        
