@@ -1,1 +1,1 @@
-Ruby on RAILS SAMPLE APP TUTORIAL 3
+The mini-tweet site for Vipul Greens Badminton.
